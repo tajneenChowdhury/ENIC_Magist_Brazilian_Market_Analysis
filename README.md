@@ -38,14 +38,10 @@ Delivery performance was generally acceptable, but delays and customer experienc
 
 ## Recommendation
 
-A cautious market entry through Magist is recommended.
+A phased and measured expansion via Magist is advised. 
+Eniac should initially pilot a curated tech portfolio to gauge consumer demand, track fulfillment reliability, and ensure Magist aligns with Eniac’s premium brand standards prior to scaling. Specifically, the product mix should prioritize tech over non-tech items to capitalize on higher ticket values and reinforce Eniac’s core technological identity. 
 
-Eniac should start with a limited product selection, test demand for tech-related products, monitor delivery performance, and evaluate whether Magist can support Eniac’s premium brand positioning before scaling further.
-
-The final recommendation is a “Conditional Yes.” Magist has strong potential for growth, especially in São Paulo. However, the analysis found delivery, infrastructure, and security concerns in wider Brazilian regions. A merger is recommended only if Eniac follows a structured three-phase plan to improve operations and protect its premium brand image.
-Project Goal
-
-This project demonstrates my ability to use SQL and Tableau for business analysis, interpret data from a business perspective, and communicate recommendations clearly.
+The ultimate verdict is a "Conditional Yes." While Magist demonstrates solid momentum—particularly across the São Paulo hub—widespread delivery bottlenecks, infrastructure deficits, and cargo security risks persist across outlying regions. Consequently, an integration or partnership should only proceed under a structured, three-stage roadmap designed to optimize logistics and safeguard brand equity.
 
 
 ## Repository Structure
@@ -55,4 +51,4 @@ data/           Notes about the dataset
 sql/            SQL queries used for the analysis
 tableau/        Dashboard screenshots or Tableau links
 presentation/   Final presentation or report
-images/         Supporting images
+images/         Domain Research images
