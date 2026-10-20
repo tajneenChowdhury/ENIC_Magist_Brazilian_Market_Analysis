@@ -221,7 +221,6 @@ Add Tech vs Non-Tech classification
 -- =========================================
 -- Goal:
 -- Label each category as Tech or Non-Tech
--- This will help for coloring the chart later
 
 SELECT 
     pc.product_category_name_english AS category,
