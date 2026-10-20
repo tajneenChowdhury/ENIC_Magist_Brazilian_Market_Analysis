@@ -216,6 +216,25 @@ AND order_delivered_customer_date IS NOT NULL
 AND order_status = 'delivered'
 GROUP BY delay_range;
 
+-- =========================================
+-- Number of sold items per category
+-- =========================================
+-- Goal:
+-- Count how many items were sold in each product category
+
+SELECT 
+    pc.product_category_name_english AS category,
+    COUNT(*) AS total_sold
+FROM order_items oi
+JOIN orders o
+    ON oi.order_id = o.order_id
+JOIN products p
+    ON oi.product_id = p.product_id
+JOIN product_category_name_translation pc
+    ON p.product_category_name = pc.product_category_name
+WHERE o.order_status = 'delivered'
+GROUP BY pc.product_category_name_english
+ORDER BY total_sold DESC;
 
 Add Tech vs Non-Tech classification
 -- =========================================
