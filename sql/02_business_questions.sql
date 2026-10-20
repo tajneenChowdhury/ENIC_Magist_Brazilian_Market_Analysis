@@ -12,7 +12,7 @@
 -- - Seller activity
 -- - Revenue potential
 -- - Delivery performance
---
+-- - Tech and Non Tech classification
 -- Database: magist
 -- =====================================================
 
@@ -215,3 +215,40 @@ WHERE order_estimated_delivery_date IS NOT NULL
 AND order_delivered_customer_date IS NOT NULL
 AND order_status = 'delivered'
 GROUP BY delay_range;
+
+
+Add Tech vs Non-Tech classification
+-- =========================================
+-- Goal:
+-- Label each category as Tech or Non-Tech
+-- This will help for coloring the chart later
+
+SELECT 
+    pc.product_category_name_english AS category,
+    
+    CASE 
+        WHEN pc.product_category_name_english IN (
+            'computers','computers_accessories','electronics',
+            'telephony','audio','consoles_games',
+            'tablets_printing_image','dvds_blu_ray','watches_gifts'
+        ) THEN 'Tech'
+        ELSE 'Non-Tech'
+    END AS category_type,
+    
+    COUNT(*) AS total_sold
+
+FROM order_items oi
+JOIN orders o
+    ON oi.order_id = o.order_id
+JOIN products p
+    ON oi.product_id = p.product_id
+JOIN product_category_name_translation pc
+    ON p.product_category_name = pc.product_category_name
+
+WHERE o.order_status = 'delivered'
+
+GROUP BY pc.product_category_name_english
+ORDER BY total_sold DESC;
+
+
+   
